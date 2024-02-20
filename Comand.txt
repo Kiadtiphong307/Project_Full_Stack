@@ -1,0 +1,20 @@
+//ติดตั้ง laravel
+composer create-project laravel/laravel Project_Full_Stack
+
+
+//สร้างโมเดล และ สร้าง resource controller ที่เกี่ยวข้องกับโมเดล
+php artisan make:model Customers -rmfs
+    -r หมายถึงสร้าง resource controller ที่เกี่ยวข้องกับโมเดล
+    -m หมายถึงสร้างไฟล์ migration ที่เกี่ยวข้องกับโมเดล
+    -f หมายถึงสร้างไฟล์ factory ที่เกี่ยวข้องกับโมเดล
+    -s หมายถึงสร้างไฟล์ seed ที่เกี่ยวข้องกับโมเดล
+
+// ติดตั้ง laravel jetstream
+composer require laravel/jetstream
+
+// ติดตั้ง jetstream jetstream
+php artisan jetstream:install inertia --ssr
+
+// ติดตั้ง tailwindcss
+npm install -D tailwindcss 
+

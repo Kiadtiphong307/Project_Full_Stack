@@ -27,7 +27,7 @@ const props = defineProps({
                         <div class="mt-5 text-gray-500 text-sm leading-relaxed" v-for=" (customer,index ) in customers" :key="index"><h6></h6>
                         <strong>ลำดับ : {{ index+1 }}</strong>  <br>
                         <strong>
-                            รหัสสินค้า : {{ customer.person_code }} <br>
+                            รหัสประจำตัว : {{ customer.person_code }} <br>
                             ชื่อ : {{ customer.first_name }} <br>
                             นามสกุล : {{ customer.last_name }} <br>
                             เพศ : {{ customer.gender }} <br>

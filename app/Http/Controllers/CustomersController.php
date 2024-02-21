@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customers;
 use Illuminate\Http\Request;
+
 use Inertia\Inertia;
 
 class CustomersController extends Controller
@@ -18,6 +19,13 @@ class CustomersController extends Controller
         return Inertia::render('Customers/Index', [
             'customers' => $customers
         ]);
+
+        // return response()->json([
+        //     'message' => 'Customers fetched successfully',
+        //     'data' => $customers
+            
+        // ], 200);
+        
     }
 
     /**

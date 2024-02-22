@@ -87,11 +87,11 @@ function editProduct(productCode) {
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg " >
                     <div><p class="text-4xl p-6 m-6">แสดงรายการสินค้า</p></div>
-                    <div class="bg-gray-200 bg-opacity-25 grid grid-cols- md:grid-cols-2 gap-8 lg:gap-78p-6 lg:p-10 p-9"> 
+                    <div class="bg-gray-200 bg-opacity-25 grid grid-cols- md:grid-cols-2 gap-8 lg:gap-78p-6 lg:p-10 p-9 " > 
                         <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" v-for="(product, index) in props.products" :key="index">
-                            <h5 class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            <h5 class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white ">
                                 <strong> ลำดับ : {{ index+1 }}</strong>  <br>
                                 รหัสสินค้า : {{ product.product_code }} <br>
                                 ชื่อสินค้า : {{ product.product_name }} <br>
@@ -99,7 +99,10 @@ function editProduct(productCode) {
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" >
                                 คำอธิบาย : {{ product.description }} <br>
                                 ราคา : {{ product.price }} <br>
-                                จำนวน : {{ product.quantity }} <br>
+                                <button :class="product.quantity === 0 ? 'bg-red-500 hover:bg-red-700' : 'bg-green-700 hover:bg-green-700'" class="text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
+                                    {{ product.quantity === 0 ? 'สินค้าหมด' : `จำนวน : ${product.quantity}` }}
+                                </button>
+
                             </p>
                             <div class="space-x-4">
                             <button @click="deleteProduct(product.product_code)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">

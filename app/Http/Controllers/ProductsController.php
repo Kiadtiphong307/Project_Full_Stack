@@ -81,19 +81,37 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit($product_code)
     {
-
+        $product = DB::table('products')->where('product_code', $product_code)->first();
+    
+        return Inertia::render('Edit/Index', [
+            'product' => $product
+        ]);
     }
     
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update()
+    
+    public function update(Request $request, $product_code)
     {
-
+        $request->validate([
+            'product_name' => 'required',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'quantity' => 'required|integer',
+        ]);
+    
+        DB::table('products')
+        ->where('product_code', $product_code)
+        ->update([
+            'product_name' => $request->product_name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+            'updated_at' => now(),
+        ]);
+    
     }
+    
     
 
     /**

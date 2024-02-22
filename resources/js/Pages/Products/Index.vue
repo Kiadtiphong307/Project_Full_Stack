@@ -39,7 +39,9 @@ function deleteProduct(productId) {
     }
 }
 
-
+function editProduct(productCode) {
+    window.location.href = `/products/edit/${productCode}`;
+}
 </script>
 
 <template>
@@ -78,6 +80,7 @@ function deleteProduct(productId) {
                             </form>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -101,13 +104,10 @@ function deleteProduct(productId) {
                             <button @click="deleteProduct(product.product_code)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
                                 ลบ 
                             </button>
-                            <button class="bg-blue-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
+                            <button @click="editProduct(product.product_code)" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
                                 แก้ไข
                             </button>
-                        </div>
-                        <div class="mt-5 text-gray-500 text-sm leading-relaxed" >
-                            <h6></h6>
-                            <strong></strong> 
+
                         </div>
                     </div>
                 </div>

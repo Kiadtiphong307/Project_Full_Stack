@@ -9,8 +9,6 @@ php artisan make:model Customers -rmfs
     -f หมายถึงสร้างไฟล์ factory ที่เกี่ยวข้องกับโมเดล
     -s หมายถึงสร้างไฟล์ seed ที่เกี่ยวข้องกับโมเดล
 
-// ติดตั้ง laravel jetstream
-composer require laravel/jetstream
 
 // ติดตั้ง jetstream jetstream
 php artisan jetstream:install inertia --ssr
@@ -18,3 +16,8 @@ php artisan jetstream:install inertia --ssr
 // ติดตั้ง tailwindcss
 npm install -D tailwindcss 
 
+// ติดตั้ง inertiajs
+npm install @inertiajs/inertia-vue3
+
+// ติดตั้ง axios
+npm install axios

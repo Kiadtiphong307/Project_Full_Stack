@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import { defineProps, reactive } from 'vue';
+import { onMounted, reactive, defineProps } from 'vue';
 import axios from 'axios';
 
 const props = defineProps({
@@ -19,17 +19,25 @@ const form = reactive({
 });
 
 
+onMounted(() => {
+    form.product_code = props.product.product_code;
+    form.product_name = props.product.product_name;
+    form.description = props.product.description;
+    form.price = props.product.price;
+    form.quantity = props.product.quantity;
+});
+
 
 function submitForm() {
-    axios.put(`/products/${form.product_code}`, form)
-    .then(response => {
-        if (response.status === 200) {
-            alert('แก้ไขสินค้าสำเร็จ');
-            window.location = '/products'; 
-        }
-    });
+    if(confirm('ต้องการแก้ไขสินค้านี้หรือไม่')) {
+        axios.put(`/products/${form.product_code}`, form)
+        .then(response => {
+            if (response.status === 200) {
+                alert('แก้ไขสินค้าสำเร็จ');
+                window.location.href = '/products'; 
+        }});
+    }
 }
-
 
 </script>
 

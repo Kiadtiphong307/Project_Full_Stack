@@ -46,7 +46,8 @@ Route::middleware([
 
     Route::get('/products/edit/{product}', [ProductsController::class, 'edit'])->name('products.edit');
     
-    Route::put('/products/{product}', [ProductsController::class, 'update'])->name('products.update');
+    Route::put('/products/{product}', [ProductsController::class, 'update']);
+
     
 
 

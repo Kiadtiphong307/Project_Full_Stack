@@ -101,17 +101,20 @@ function editProduct(productCode) {
                                 ราคา : {{ product.price }} <br>
                                 จำนวน : {{ product.quantity }} <br>
                             </p>
+                            <div class="space-x-4">
                             <button @click="deleteProduct(product.product_code)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
                                 ลบ 
                             </button>
                             <button @click="editProduct(product.product_code)" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
                                 แก้ไข
                             </button>
+                            </div>
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
     </AppLayout>
 </template>

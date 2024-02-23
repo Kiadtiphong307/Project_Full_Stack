@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,10 @@ Route::middleware([
     Route::get('/products/edit/{product}', [ProductsController::class, 'edit'])->name('products.edit');
     
     Route::put('/products/{product}', [ProductsController::class, 'update']);
+
+    //cart
+    Route::get('/cart',[CartController::class, 'index'])->name('cart');
+
 
     
 

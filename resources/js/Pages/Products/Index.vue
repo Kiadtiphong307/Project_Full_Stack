@@ -99,7 +99,7 @@ function editProduct(productCode) {
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" >
                                 คำอธิบาย : {{ product.description }} <br>
                                 ราคา : {{ product.price }} <br>
-                                <button :class="product.quantity === 0 ? 'bg-red-500 hover:bg-red-700' : 'bg-green-700 hover:bg-green-700'" class="text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
+                                <button :class="product.quantity === 0 ? 'bg-red-700' : 'bg-green-700 hover:bg-green-700'" class="text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
                                     {{ product.quantity === 0 ? 'สินค้าหมด' : `จำนวน : ${product.quantity}` }}
                                 </button>
 
@@ -108,8 +108,11 @@ function editProduct(productCode) {
                             <button @click="deleteProduct(product.product_code)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
                                 ลบ 
                             </button>
-                            <button @click="editProduct(product.product_code)" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
+                            <button @click="editProduct(product.product_code)" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
                                 แก้ไข
+                            </button>
+                            <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
+                                เพิ่มสินค้า
                             </button>
                             </div>
 

@@ -57,12 +57,25 @@ const logout = () => {
                                 <NavLink :href="route('products')" :active="route().current('products')">
                                     Products
                                 </NavLink>
+                                <NavLink>
+                                    ประวัติการสั่งซื้อ
+                                </NavLink>
+
                                 
                             </div>
                         </div>
-
+                        
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <div class="ms-3 relative">
+                                
+                                <NavLink :href="route('cart')" :active="route().current('cart')" class="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 pt-5 py-5" >
+                                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" d="M4 4c0-.6.4-1 1-1h1.5c.5 0 .9.3 1 .8L7.9 6H19a1 1 0 0 1 1 1.2l-1.3 6a1 1 0 0 1-1 .8h-8l.2 1H17a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L5.7 5H5a1 1 0 0 1-1-1Z" clip-rule="evenodd"/></svg>
+                                        Cart
+                                </NavLink>
+                                
+                                
+
                                 <!-- Teams Dropdown -->
                                 <Dropdown v-if="$page.props.jetstream.hasTeamFeatures" align="right" width="60">
                                     <template #trigger>
@@ -137,6 +150,7 @@ const logout = () => {
                                                 </svg>
                                             </button>
                                         </span>
+
                                     </template>
 
                                     <template #content>

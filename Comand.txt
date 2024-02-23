@@ -4,6 +4,8 @@ composer create-project laravel/laravel Project_Full_Stack
 
 //สร้างโมเดล และ สร้าง resource controller ที่เกี่ยวข้องกับโมเดล
 php artisan make:model Customers -rmfs
+php artisan make:model Pruducts -rmfs
+php artisan make:model Cart -rm
     -r หมายถึงสร้าง resource controller ที่เกี่ยวข้องกับโมเดล
     -m หมายถึงสร้างไฟล์ migration ที่เกี่ยวข้องกับโมเดล
     -f หมายถึงสร้างไฟล์ factory ที่เกี่ยวข้องกับโมเดล
